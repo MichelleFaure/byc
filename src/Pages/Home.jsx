@@ -1,19 +1,16 @@
-import CarouselHome from "../Components/CarouselHome"
 import About from "../Components/About";
+import MoreHome from "../Components/MoreHome";
 import ProjectsHome from "../Components/ProjectsHome";
-import Services from "../Components/Services";
-import ContactCard from "../Components/ContactCard";
-import Clients from "../Components/Clients";
+import Stats from "../Components/Stats";
+
 
 const Home = () => {
   return (
     <>
-      <CarouselHome></CarouselHome>
-      <About></About>
       <ProjectsHome></ProjectsHome>
-      <Services></Services>
-      <ContactCard></ContactCard>
-      <Clients></Clients>
+      <About></About>
+      <Stats></Stats>
+      <MoreHome></MoreHome>
     </>
   );
 }

@@ -8,6 +8,7 @@ import latamtemuco1 from "./latamtemuco1.png";
 import latamtemuco2 from "./latamtemuco2.png";
 import latamtemuco3 from "./latamtemuco3.png";
 import { nanoid } from "nanoid";
+
 const proyectos = [
   {
     id: "interior-locales",

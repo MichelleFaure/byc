@@ -1,49 +1,57 @@
-import Titles from "../Layouts/Title";
 import { JackInTheBox } from "react-awesome-reveal";
 import location from "../assets/icons/location.svg";
 import mail from "../assets/icons/mail-icon.svg";
 import phone from "../assets/icons/phone-icon.svg";
-
+import entelpuertomontt1 from "../assets/intLocales/entelpuertomontt1.png";
+import { CiLocationOn, CiMail, CiPhone } from "react-icons/ci";
 const Contact = () => {
   return (
-    <main className="bg-black text-white py-12">
-      <Titles title={"Contacto"} color={"white"}></Titles>
-
-      <section className="w-3/4 m-auto ">
-        <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-          <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-1 lg:items-center lg:gap-x-16">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 text-center">
-              <JackInTheBox>
-                <div className="block  bg-black border-gray-100 p-12 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
-                  <span className="inline-block rounded-lg p-3">
-                    <img src={location} />
-                  </span>
-                  <h2 className="mt-2 font-bold text-2xl">Dirección</h2>
-                  <p className="mt-4 block text-base ">
-                    Carlos Antúnez N°2453, Providencia, RM
-                  </p>
-                </div>
-                <div className="block  bg-black border-gray-100 p-12 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
-                  <span className="inline-block rounded-lg p-3">
-                    <img src={mail} />
-                  </span>
-                  <h2 className="mt-2 font-bold text-2xl">Correo</h2>
-                  <p className="mt-4 block text-base ">byc@barreraycuevas.cl</p>
-                </div>
-                <div className="block  bg-black border-gray-100 p-12 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
-                  <span className="inline-block rounded-lg p-3">
-                    <img src={phone} />
-                  </span>
-                  <h2 className="mt-2 font-bold text-2xl">Teléfono</h2>
-                  <p className="mt-4 block text-base ">+56 22 875 7705</p>
-                  <p className="mt-4 block text-base ">+56 22 875 7708</p>
-                </div>
-              </JackInTheBox>
+    <section className="w-full my-24 md:my-40">
+      <div className="md:grid grid-cols-3 lg:w-3/5 m-auto">
+        <div className="relative col-span-2 ">
+          <div className="py-24 px-8 text-white">
+            <p className="text-4xl font-bold">Contáctanos</p>
+            <p className="mt-8 w-3/4">
+              Si deseas consultar mayor información sobre nuestros servicios o
+              tienes alguna duda al respecto, no dudes en contactarte con
+              nosotros.
+            </p>
+          </div>
+          <div className="brightness-50 absolute top-0 -z-10 w-full h-full">
+            <img
+              src={entelpuertomontt1}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="ps-8 py-24 pe-2 flex flex-col gap-16 border border-black">
+          <div className="flex items-center gap-2">
+            <CiLocationOn className="text-6xl" />
+            <div>
+              <p className="font-semibold text-lg">Dirección</p>
+              <p className="text-gray-500">
+                Carlos Antúnez N°2453, Providencia
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center  gap-2">
+            <CiMail className="text-6xl" />
+            <div>
+              <p className="font-semibold text-lg">Correo Electronico</p>
+              <p className="text-gray-500">byc@barreraycuevas.cl</p>
+            </div>
+          </div>
+          <div className="flex items-center  gap-2">
+            <CiPhone className="text-6xl" />
+            <div>
+              <p className="font-semibold text-lg">Teléfono</p>
+              <p className="text-gray-500">+56 22 875 7705</p>
+              <p className="text-gray-500">+56 22 875 7708</p>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 export default Contact;

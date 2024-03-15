@@ -4,11 +4,14 @@ const Clients = () => {
   return (
     <main className="py-12">
       <Titles title={"Clientes"} color={"black"}></Titles>
-      <div className="flex flex-wrap justify-center gap-3">
-        {logos.map((item,index) => {
+      <div className="grid grid-cols-2  md:grid-cols-4 w-3/5 m-auto">
+        {logos.map((item, index) => {
           return (
-            <div key={index}>
-              <img src={item.url} alt={item.name} />
+            <div
+              key={index}
+              className="px-2 hover:scale-110 duration-300 "
+            >
+              <img src={item.urlimg} alt={item.altimg} />
             </div>
           );
         })}

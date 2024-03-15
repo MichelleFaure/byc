@@ -2,10 +2,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./Layouts/RootLayout";
 import Error from "./Pages/Error";
 import Home from "./Pages/Home";
-import Projects from "./Pages/Projects";
+import AllProjects from "./Pages/AllProjects";
 import Contact from "./Pages/Contact";
-import SingleProject from "./Pages/SingleProject";
-
+import CategoryProjects from "./Pages/CategoryProjects";
+import Clients from "./Components/Clients";
+import Services from "./Components/Services";
 
 const router = createBrowserRouter([
   {
@@ -19,22 +20,29 @@ const router = createBrowserRouter([
       },
       {
         path: "proyectos",
-        element: <Projects />,
+        element: <AllProjects />,
       },
       {
         path: "proyectos/:id",
-        element: <SingleProject />,
+        element: <CategoryProjects />,
       },
       {
         path: "contacto",
         element: <Contact />,
       },
+      {
+        path: "servicios",
+        element: <Services />,
+      },
+      {
+        path: "clientes",
+        element: <Clients />,
+      },
     ],
   },
 ]);
 
-
 const App = () => {
-  return <RouterProvider router ={router}/>;
+  return <RouterProvider router={router} />;
 };
 export default App;

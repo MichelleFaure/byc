@@ -1,104 +1,77 @@
-import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { FaBars, FaXmark } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logos/logo.png";
+import { useState } from "react";
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <nav className="bg-black">
-      <div className="navbar justify-between align-element">
-        <div className="dropdown sm:hidden">
-          <label tabIndex={0} className="btn btn-ghost sm:hidden">
-            <FaBarsStaggered className="h-6 w-6 text-white" />
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white w-44"
+    <div>
+      <nav>
+        <ul className="hidden md:flex items-center justify-between my-10 w-3/5 m-auto  font-semibold text-black text-xl ">
+          <li className="hover:underline">
+            <NavLink to="proyectos">Proyectos</NavLink>
+          </li>
+          <li className="hover:underline">
+            <NavLink to="contacto">Contacto</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">
+              <img src={logo} alt="logo barrera y cuevas" className="w-40" />
+            </NavLink>
+          </li>
+          <li className="hover:underline">
+            <NavLink to="servicios">Servicios</NavLink>
+          </li>
+          <li className="hover:underline">
+            <NavLink to="clientes">Clientes</NavLink>
+          </li>
+        </ul>
+        <div className="md:hidden">
+          <div className="flex justify-around p-3">
+            <NavLink to="/">
+              <img src={logo} alt="logo barrera y cuevas" className="w-40" />
+            </NavLink>
+            <button className="text-2xl" onClick={() => setShowMenu(!showMenu)}>
+              <FaBars />
+            </button>
+          </div>
+          <div
+            className={` ${
+              showMenu
+                ? "absolute bg-white w-full h-full z-10 top-0 p-6"
+                : "hidden"
+            }`}
           >
-            <li>
-              <NavLink to="/">HOME</NavLink>
-            </li>
-            <li>
-              <NavLink to="contacto">CONTACTO</NavLink>
-            </li>
-            <li>
-              <details>
-                <summary>PROYECTOS</summary>
-                <ul className="p-2 bg-base-100 text-black">
-                  <li>
-                    <NavLink to="proyectos/interior-locales">
-                      Interior Locales
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/interior-oficina">
-                      Interior Oficina
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/arquitectura-industrial">
-                      Arquitectura Industrial
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/mobiliario-diseño">
-                      Mobiliario Diseño
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos">Ver todos</NavLink>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+            <button className="text-2xl" onClick={() => setShowMenu(!showMenu)}>
+              <FaXmark />
+            </button>
+            <ul className="text-2xl">
+              <li className="mt-6 font-bold">
+                <NavLink to="proyectos" onClick={() => setShowMenu(false)}>
+                  Proyectos
+                </NavLink>
+              </li>
+              <li className="mt-6 font-bold">
+                <NavLink to="contacto" onClick={() => setShowMenu(false)}>
+                  Contacto
+                </NavLink>
+              </li>
+              <li className="mt-6 font-bold">
+                <NavLink to="servicios" onClick={() => setShowMenu(false)}>
+                  Servicios
+                </NavLink>
+              </li>
+              <li className="mt-6 font-bold">
+                <NavLink to="clientes" onClick={() => setShowMenu(false)}>
+                  Clientes
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <NavLink to="/" className="w-36">
-          <img src={logo} alt="logo" />
-        </NavLink>
-
-        <div className="hidden sm:flex me-5">
-          <ul className="menu menu-horizontal text-white z-20 ">
-            <li>
-              <NavLink to="/">HOME</NavLink>
-            </li>
-            <li>
-              <NavLink to="contacto">CONTACTO</NavLink>
-            </li>
-            <li>
-              <details>
-                <summary>PROYECTOS</summary>
-                <ul className="p-2 bg-base-100 text-black">
-                  <li>
-                    <NavLink to="proyectos/interior-locales">
-                      Interior Locales
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/interior-oficina">
-                      Interior Oficina
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/arquitectura-industrial">
-                      Arquitectura Industrial
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos/mobiliario-diseño">
-                      Mobiliario Diseño
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="proyectos">Ver todos</NavLink>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 export default Navbar;
